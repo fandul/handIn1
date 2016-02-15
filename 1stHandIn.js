@@ -87,8 +87,38 @@
 
     /*
     #5 Immediately-Invoked Function Expressions(IIFE)
+     IIFE is a javaScript function that runs as soon as it is declared.
+    example of IIFE:
 
-    
+     (function(){
+     //do something
+     }
+     )()
+
+     it is usefull to avoid declaring variables in the global scope.
+
+     #6 JavaScript Prototyping
+
+     Every JS function has a prototype property and you can add properties and methods to this prototype if you want to
+     implement inheritence.
+     Example:
+
+
      */
+     function Person (first, last, age, eyeColor){
+          this.firstName = first;
+          this.lastName = last;
+          this.age = age;
+          this.eyeColor = eyeColor;
+     }
 
+     var person1 = new Person("Rihards", "Pacevics", 27, "green");
+
+     //adding prototype for prety printing
+     Person.prototype.nicePrint = function(){
+          console.log("You name is " + this.firstName + " " + this.lastName + ", you`re " + this.age + " years old " +
+          "\nand your eye color is " + this.eyeColor + ".");
+     }
+
+     person1.nicePrint();
 
